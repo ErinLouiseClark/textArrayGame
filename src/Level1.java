@@ -18,7 +18,7 @@ public class Level1
 		Scanner userChoice = new Scanner(System.in);
 		System.out.println("Welcome hero, I have a task for you.");
 		System.out.println("I have hidden a treasure in this field.");
-		System.out.println("Use the n,e,s,w keys to move.");
+		System.out.println("Use W to move up, A to move right, S to move down, and D to move left.");
 		System.out.println("Are you ready to go after it?");
 		System.out.println("(1) Of course I am!");
 		System.out.println("(2) This is not worth my time.");
@@ -123,15 +123,14 @@ public class Level1
 		{
 			Scanner userChoice = new Scanner(System.in);
 			System.out.println();
-			System.out.println("Which way would you like to move, hero?");
-			System.out.println("North, South, East, or West?");
+			System.out.println("Type in W, A, S, or D and press enter to make your move.");
 			String direction = userChoice.nextLine();
-				if (direction.equalsIgnoreCase("North") || direction.equalsIgnoreCase("N"))
+				if (direction.equalsIgnoreCase("W"))
 					{
 						if (shopLayout[heroX-1][heroY].equals("   ") || shopLayout[heroX-1][heroY].equals(" T "))
 							{
 								heroX -= 1;
-								System.out.println("You have moved north!");
+								System.out.println("You have moved up!");
 								generateBoard();
 							}
 						else if (shopLayout[heroX-1][heroY].equals(" # "))
@@ -140,12 +139,12 @@ public class Level1
 								generateBoard();
 							}
 					}
-				if (direction.equalsIgnoreCase("South") || direction.equalsIgnoreCase("S"))
+				if (direction.equalsIgnoreCase("S"))
 					{
 						if (shopLayout[heroX+1][heroY].equals("   ") || shopLayout[heroX+1][heroY].equals(" T "))
 							{
 								heroX += 1;
-								System.out.println("You have moved south!");
+								System.out.println("You have moved down!");
 								generateBoard();
 							}
 						else if (shopLayout[heroX+1][heroY].equals(" # "))
@@ -154,12 +153,12 @@ public class Level1
 								generateBoard();
 							}
 					}
-				if (direction.equalsIgnoreCase("West") || direction.equalsIgnoreCase("W"))
+				if (direction.equalsIgnoreCase("A"))
 					{
 						if (shopLayout[heroX][heroY-1].equals("   ") || shopLayout[heroX][heroY+1].equals(" T "))
 							{
 								heroY -= 1;
-								System.out.println("You have moved west!");
+								System.out.println("You have moved left!");
 								generateBoard();
 							}
 						else if (shopLayout[heroX][heroY-1].equals(" # "))
@@ -168,12 +167,12 @@ public class Level1
 								generateBoard();
 							}
 					}
-				if (direction.equalsIgnoreCase("East") || direction.equalsIgnoreCase("E"))
+				if (direction.equalsIgnoreCase("D"))
 					{
 						if (shopLayout[heroX][heroY+1].equals("   ") || shopLayout[heroX][heroY+1].equals(" T "))
 							{
 								heroY += 1;
-								System.out.println("You have moved east!");
+								System.out.println("You have moved right!");
 								generateBoard();
 							}
 						else if (shopLayout[heroX][heroY+1].equals(" # "))
