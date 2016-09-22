@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class Level1
 	{
+		//Changed NSEW to WASD
 		static String [][] shopLayout = new String[11][11];
 		static int heroX = 1;
 		static int heroY = 5;
